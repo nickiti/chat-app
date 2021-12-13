@@ -5,6 +5,8 @@ import {UserList} from './';
 import { CloseCreateChannel } from '../assets';
 
 const ChannelNameInput = ({channelName = '', setChannelName}) => {
+    const [selectedUsers, setSelectedUsers] = useState([])
+
     const handleChange = (e) => {
         e.preventDefault();
 
@@ -19,8 +21,10 @@ const ChannelNameInput = ({channelName = '', setChannelName}) => {
         </div>
     )
 }
+
 const CreateChannel = ({createType, setIsCreating}) => {
-    const [channelName, setChannelName] = useState();
+   
+    const [channelName, setChannelName] = useState('');
 
 
     return (
