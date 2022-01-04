@@ -61,8 +61,6 @@ const logout = () => {
                             setIsCreating={setIsCreating}
                             setCreateType={setCreateType}
                             setIsEditing={setIsEditing}
-                            
-
                         />
                     )}
                     Preview={(previewProps) => (

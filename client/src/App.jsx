@@ -1,19 +1,15 @@
 import React, { useState } from 'react';
-import {StreamChat} from 'stream-chat';
-import {Chat} from 'stream-chat-react';
 import Cookies from 'universal-cookie';
 
-import { ChannelContainer, ChannelListContainer, Auth} from './components';
+import { ChannelContainer, ChannelListContainer, Auth, ChatContainer} from './components';
 
 import './App.css';
 import 'stream-chat-react/dist/css/index.css';
 
 const cookies = new Cookies();
-
-const apiKey = '7ayc2z4n4c6b';
 const authToken = cookies.get('token')
 
-const client = StreamChat.getInstance(apiKey);
+const client = ""
 
 if(authToken){
     client.connectUser({
@@ -35,7 +31,7 @@ const App = () => {
 
   return (
     <div className='app__wrapper'>
-        <Chat client={client} theme='team light'>
+        <ChatContainer client={client} theme='team light'>
             <ChannelListContainer
                 isCreating={isCreating}
                 setIsCreating={setIsCreating}
@@ -49,7 +45,7 @@ const App = () => {
                 setIsEditing={setIsEditing}
                 createType={createType}
             />
-        </Chat>
+        </ChatContainer>
     </div>
   );
 }
